@@ -1,0 +1,1825 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.co-ode.org/roberts/particle.owl#"
+     xml:base="http://www.co-ode.org/roberts/particle.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:particle="http://www.co-ode.org/roberts/particle.owl#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:go="http://www.geneontology.org/go#">
+    <owl:Ontology rdf:about="http://www.co-ode.org/roberts/particle.owl">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An ontology of composite and fundamental sub-atomic particles. It is uber normalised and all classes other than the particles themselves are defined classes. Caveats: forces are dealt with badly; mass is not developed; energy mass equivalence would be nice; electrical charge is a peculiar number system to cope with the notional one third and two third charges on things.  the ontology&#39;s correctness is also hampered by by ignorance of the subject area.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#Range"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#DataProperty"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#SubClassOf"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#Annotations"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#Characteristics"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#rdfs"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#ObjectProperty"/>
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#SubPropertyOf"/>
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/go#Ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#carriesForce -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/roberts/particle.owl#carriesForce">
+        <rdfs:range rdf:resource="http://www.co-ode.org/roberts/particle.owl#Moment"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasQuality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#hasCharge -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/roberts/particle.owl#hasCharge">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#hasColourCharge -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/roberts/particle.owl#hasColourCharge">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/roberts/particle.owl#ColourCharge"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasQuality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#hasDirectPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/roberts/particle.owl#hasDirectPart">
+        <rdfs:subPropertyOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/roberts/particle.owl#hasPart">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#hasPolarity -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/roberts/particle.owl#hasPolarity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/roberts/particle.owl#Polarity"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasQuality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#hasQuality -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/roberts/particle.owl#hasQuality"/>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#hasRestMass -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/roberts/particle.owl#hasRestMass"/>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#hasSpin -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/roberts/particle.owl#hasSpin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/roberts/particle.owl#ParticleSpin"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasQuality"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#hasMagnitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/roberts/particle.owl#hasMagnitude">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/roberts/particle.owl#DomainEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.co-ode.org/roberts/particle.owl#hasValue"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiBottomQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiBottomQuark">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiQuark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiCharmQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiCharmQuark">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiQuark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiDownQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiDownQuark">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiQuark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiElectronNeutrino -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiElectronNeutrino">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiGluon -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiGluon">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiGraviton -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiGraviton">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiHiggsBoson -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiHiggsBoson">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiMuon -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiMuon">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiMuonNeutrino -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiMuonNeutrino">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiPhoton -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiPhoton">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiQuark">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiStrangeQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiStrangeQuark">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiQuark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiTau -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiTau">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiTauNeutrino -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiTauNeutrino">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiTopQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiTopQuark">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiQuark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiUpQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiUpQuark">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiQuark"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiWMinusBoson -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiWMinusBoson">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiWPlusBoson -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiWPlusBoson">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#AntiZBoson -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiZBoson">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Baryion -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Baryion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baryion</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:onClass rdf:resource="http://www.co-ode.org/roberts/particle.owl#Quark"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#BlueColourCharge -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#BlueColourCharge">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blue colour charge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#ColourCharge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Boson -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Boson">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boson</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#IntegerSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#BottomQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#BottomQuark">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bottom quark</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Quark"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NegativePolarity"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasMagnitude"/>
+                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#CarrierParticle -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#CarrierParticle">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carrier particle</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#Moment"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#IntegerSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Charge -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Charge</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#PhysicalEntity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#Polarity"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasMagnitude"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#CharmQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#CharmQuark">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Charm quark</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Quark"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#PositivePolarity"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasMagnitude"/>
+                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#ColourCharge -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#ColourCharge">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colour charge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#CompositeSubAtomicParticle -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#CompositeSubAtomicParticle">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Composite sub-atomic particle</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:onClass rdf:resource="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sub-atomic particle made  from more than one other sub-atomic particle.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#DomainEntity -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#DomainEntity"/>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#DownQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#DownQuark">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Down quark</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Quark"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NegativePolarity"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasMagnitude"/>
+                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electro-magnetic force</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#Moment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Electron -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Electron">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electron</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#HalfSpin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasRestMass"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Mass"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasValue"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</xsd:minExclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NegativePolarity"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasMagnitude"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taken fromhttp://en.wikipedia.org/wiki/Electron</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#ElectronNeutrino -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#ElectronNeutrino">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Electron neutrino</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NeutralCharge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#HalfSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Fermion -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Fermion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fermion</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#HalfSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fundamental sub-atomic particle</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Gluon -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Gluon">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gluon</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#StrongNuclearForce"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasColourCharge"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ColourCharge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#IntegerSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#GravitationalForce -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#GravitationalForce">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gravitational force</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#Moment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Graviton -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Graviton">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Graviton</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#GravitationalForce"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#IntegerSpin"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                        <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#GravitationalForce"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#GreenColourCharge -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#GreenColourCharge">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Green colour charge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#ColourCharge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#HalfSpin -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#HalfSpin">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Half spin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#ParticleSpin"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/roberts/particle.owl#IntegerSpin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#HiggsBoson -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#HiggsBoson">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Higgs boson</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#IntegerSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#IntegerSpin -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#IntegerSpin">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Integer spin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#ParticleSpin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Lepton -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Lepton">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lepton</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#GravitationalForce"/>
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#HalfSpin"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#GravitationalForce"/>
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Mass -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Mass">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mass</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#DomainEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Meson -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Meson">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Meson</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:onClass>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiQuark"/>
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Quark"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:onClass>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Moment -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Moment">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#PhysicalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Muon -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Muon">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muon</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NegativePolarity"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasMagnitude"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#MuonNeutrino -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#MuonNeutrino">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NeutralCharge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#HalfSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#NegativeCharge -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#NegativeCharge">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NegativePolarity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#NegativePolarity -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#NegativePolarity">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#Polarity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#NeutralCharge -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#NeutralCharge">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NeutralPolarity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#NeutralPolarity -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#NeutralPolarity">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#Polarity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Neutrino -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Neutrino">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neutrino</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NeutralCharge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#HalfSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Neutron -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Neutron">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neutron</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#Gluon"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#DownQuark"/>
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Gluon"/>
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#UpQuark"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:onClass rdf:resource="http://www.co-ode.org/roberts/particle.owl#UpQuark"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:onClass rdf:resource="http://www.co-ode.org/roberts/particle.owl#DownQuark"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Nucleon -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Nucleon">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nucleon</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Neutron"/>
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Proton"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#ParticleSpin -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#ParticleSpin">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Particle spin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Photon -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Photon">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Photon</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasRestMass"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Mass"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasValue"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</owl:hasValue>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NeutralCharge"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasColourCharge"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ColourCharge"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#IntegerSpin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">taken from http://en.wikipedia.org/wiki/Photon#Nomenclature</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#PhysicalEntity -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#PhysicalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#DomainEntity"/>
+        <owl:disjointWith rdf:resource="http://www.co-ode.org/roberts/particle.owl#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Pion -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Pion">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pion</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:onClass rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiQuark"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:onClass rdf:resource="http://www.co-ode.org/roberts/particle.owl#Quark"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Polarity -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Polarity">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polarity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#Quality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#PositiveCharge -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#PositiveCharge">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Positive cahrge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#PositivePolarity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#PositivePolarity -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#PositivePolarity">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Positive polarity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#Polarity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Positron -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Positron">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Positron</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#AntiFundamentalSubAtomicParticle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Proton -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Proton">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Proton</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#Gluon"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#DownQuark"/>
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Gluon"/>
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#UpQuark"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:onClass rdf:resource="http://www.co-ode.org/roberts/particle.owl#DownQuark"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasDirectPart"/>
+                        <owl:onClass rdf:resource="http://www.co-ode.org/roberts/particle.owl#UpQuark"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Quality -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Quality">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#DomainEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Quark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Quark">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quark</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#GravitationalForce"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#StrongNuclearForce"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasColourCharge"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ColourCharge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#HalfSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#RedColourCharge -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#RedColourCharge">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Red colour charge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#ColourCharge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#StrangeQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#StrangeQuark">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strange quark</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Quark"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NegativePolarity"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasMagnitude"/>
+                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#StrongNuclearForce -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#StrongNuclearForce">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Strong nuclear force</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#Moment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sub-atomic particle</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#PhysicalEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#Tau -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#Tau">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tau</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NegativePolarity"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasMagnitude"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#TauNeutrino -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#TauNeutrino">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tau neutrino</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NeutralCharge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#HalfSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#TopQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#TopQuark">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Top quark</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Quark"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#PositivePolarity"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasMagnitude"/>
+                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#UpQuark -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#UpQuark">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Up quark</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Quark"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasPolarity"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#PositivePolarity"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasMagnitude"/>
+                                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:hasValue>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#WMinusBoson -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#WMinusBoson">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W- Boson</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NegativeCharge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#IntegerSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#WPlusBoson -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#WPlusBoson">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W+ Boson</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#PositiveCharge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#IntegerSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weak nuclear force</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/roberts/particle.owl#Moment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/roberts/particle.owl#ZBoson -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/roberts/particle.owl#ZBoson">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z Boson</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#FundamentalSubAtomicParticle"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#carriesForce"/>
+                                <owl:allValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasCharge"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#NeutralCharge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.co-ode.org/roberts/particle.owl#hasSpin"/>
+                        <owl:someValuesFrom rdf:resource="http://www.co-ode.org/roberts/particle.owl#IntegerSpin"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#ColourCharge"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#ParticleSpin"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Polarity"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#BottomQuark"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#CharmQuark"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#DownQuark"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#StrangeQuark"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#TopQuark"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#UpQuark"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Charge"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Moment"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#SubAtomicParticle"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#NegativePolarity"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#NeutralPolarity"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#PositivePolarity"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiBottomQuark"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiCharmQuark"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiDownQuark"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiStrangeQuark"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiTopQuark"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiUpQuark"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Electron"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#ElectronNeutrino"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Gluon"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Graviton"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#HiggsBoson"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Muon"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#MuonNeutrino"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Photon"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Tau"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#TauNeutrino"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#WMinusBoson"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#WPlusBoson"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#ZBoson"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiElectronNeutrino"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiGluon"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiHiggsBoson"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiMuon"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiMuonNeutrino"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiPhoton"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiTau"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiTauNeutrino"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiWMinusBoson"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiWPlusBoson"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#AntiZBoson"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Positron"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#NegativeCharge"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#NeutralCharge"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#PositiveCharge"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#BlueColourCharge"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#GreenColourCharge"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#RedColourCharge"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#ElectroMagneticForce"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#GravitationalForce"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#StrongNuclearForce"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#WeakNuclearForce"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Mass"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#PhysicalEntity"/>
+            <rdf:Description rdf:about="http://www.co-ode.org/roberts/particle.owl#Quality"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.1721) http://owlapi.sourceforge.net -->
+
